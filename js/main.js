@@ -13,25 +13,26 @@ Creare una funzione per capire se la parola inserita è palindroma (una parola c
 */
 
 const getUserNum = document.querySelector(".number");
-let userNum = getUserNum.value;
+
 
 const getUserChoice = document.querySelector(".user-choice");
-let userChoice = getUserChoice.value;
 
 const button = document.querySelector(".btn")
 const mainContainer = document.querySelector(".container");
 
 button.addEventListener('click', function (){
+    const userNum = getUserNum.value;
+    const userChoice = getUserChoice.value;
 
     mainContainer.innerHTML = "";
 
     console.log("User given number: " + userNum);
     mainContainer.innerHTML += (`<div class="row mb-4">
-                                    <span class="fs-3">Numero scelto dall'utente: <span class="fs-3 fw-bold">${userNum}</span></span>
+                                    <span class="fs-3 fw-bold">Numero scelto dall'utente: <span class="fs-2 fw-bold">${userNum}</span></span>
                                 </div>`);
     console.log("User choice over odd (dispari) or even (pari): " + userChoice);
     mainContainer.innerHTML += (`<div class="row mb-4">
-                                    <span class="fs-3">Scelto dispari o pari: <span class="fs-3 fw-bold">${userChoice}</span></span>
+                                    <span class="fs-3 fw-bold">Scelto dispari o pari: <span class="fs-2 fw-bold">${userChoice}</span></span>
                                 </div>`);
 
     function rng (){
@@ -43,13 +44,13 @@ button.addEventListener('click', function (){
     let computerRandomNumber = rng();
     console.log("Randomly generated number for computer: " + computerRandomNumber);
     mainContainer.innerHTML += (`<div class="row mb-4">
-                                    <span class="fs-3">Numero randomicamente generato dal computer: <span class="fs-3 fw-bold">${computerRandomNumber}</span></span>
+                                    <span class="fs-3 fw-bold">Numero randomicamente generato dal computer: <span class="fs-2 fw-bold">${computerRandomNumber}</span></span>
                                 </div>`);
 
     const sum = parseFloat(userNum[0]) + computerRandomNumber;
     console.log(`Sum of user given number (${userNum}) + computer randomly generated number (${computerRandomNumber}): ${sum}`);
     mainContainer.innerHTML += (`<div class="row mb-4">
-                                    <span class="fs-3">Somma del numero scelto dall'utente (${userNum}) + il numero generato per il computer (${computerRandomNumber}): <span class="fs-3 fw-bold"> ${sum}</span></span>
+                                    <span class="fs-3 fw-bold">Somma del numero scelto dall'utente (${userNum}) + il numero generato per il computer (${computerRandomNumber}): <span class="fs-2 fw-bold"> ${sum}</span></span>
                                 </div>`);
 
     function sumCheck(sum){
@@ -66,7 +67,7 @@ button.addEventListener('click', function (){
     let evenOddSum = sumCheck(sum);
     console.log("The sum is: " + evenOddSum);
     mainContainer.innerHTML += (`<div class="row mb-4">
-                                    <span class="fs-3">La somma è: <span class="fs-3 fw-bold">${evenOddSum}</span></span>
+                                    <span class="fs-3 fw-bold">La somma è: <span class="fs-2 fw-bold">${evenOddSum}</span></span>
                                 </div>`);
 
     function result(userChoice, evenOddSum){
@@ -93,6 +94,7 @@ button.addEventListener('click', function (){
         }
         return result;
     }
+    result();
     let wonOrLost = result(userChoice, evenOddSum);
     console.log(wonOrLost);
 
@@ -101,7 +103,7 @@ button.addEventListener('click', function (){
                                         <span class="fs-1 fw-bold">HAI VINTO!</span>
                                     </div>`);
     }
-    else{
+    else if (wonOrLost = "lost"){
         mainContainer.innerHTML += (`<div class="row mb-4">
                                         <span class="fs-1 fw-bold">SFORTUNATAMENTE HAI PERSO..</span>
                                     </div>`);
