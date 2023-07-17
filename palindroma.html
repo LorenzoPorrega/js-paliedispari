@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindroma</title>
+    <!-- STYLE SHEET FILE LINK -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- BOOTSTRAP CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- FONTAWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- STANDARD FAVICON TO AVOID CONSOLE ERRORS ON FIREFOX -->
+    <link rel="icon"type="image/x-icon" href="https://boolean.careers/favicon/favicon.ico">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="fw-1 fw-bold mb-5 text-center">Palindroma?</h1>
+        <h3 class="fw-bold mb-3">Funzionamento</h3>
+        <p>Inserisci una parola, clicca il bottone e il programma stabilirà se la parola inserita è palindroma o meno.</p>
+        <p>Ricorda: una parola palindroma è una parola che può essere scritta o letta nello stessa maniera da sinistra verso destra o da destra verso sinistra!</p>
+        <div class="row gx-5 d-flex justify-content-center mt-5">
+            <div class="col-5">
+                <span class="fw-bold">Inserisci la parola da verificare:</span>
+                <form>
+                    <div class="mt-3 mb-3">
+                        <input type="text" class="form-control word-to-check" id="wordToCheck">
+                    </div>
+                </form>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5">
+                <span class="fw-bold">Il risultato è:</span>
+                <div class="result mt-2 mb-3 fs-2 fw-bold"></div>
+            </div>
+            <div class="col-12 text-center mt-5">
+                <button type="button" class="btn btn-primary">Premi verificare!</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/palindroma.js"></script>
+</html>
